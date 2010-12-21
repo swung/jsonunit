@@ -1,0 +1,4 @@
+=== This is a unit tools for json tesing, include:
+
+JSONPath - very sub set of xpath
+JSONDiff - tool to conpare json in similar or seam way
