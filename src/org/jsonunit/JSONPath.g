@@ -20,13 +20,16 @@ public List<JSONPathToken> getTokenList() {
 }
 
 jsonpath
-	:	SEP o=objectkey { list.add($o.token); } (SEP o=objectkey { list.add($o.token); } | SEP o=objectarray { list.add($o.token); })*;
+	:	(SEP o=headarray { list.add($o.token); } )* (SEP o=objectkey { list.add($o.token); } | SEP o=objectarray { list.add($o.token); })+;
 
 objectkey returns [JSONPathToken token]
 	:	STRING { $token = new JSONPathToken($STRING.text); };
 
 objectarray returns [JSONPathToken token]
 	:	STRING '[' NUMBER ']' { $token = new JSONPathToken($STRING.text, Integer.parseInt($NUMBER.text)); };
+	
+headarray returns[JSONPathToken token]
+	:	'[' NUMBER']' { $token = new JSONPathToken("", Integer.parseInt($NUMBER.text)); };
 
 NUMBER
 	:	('0' .. '9')+;

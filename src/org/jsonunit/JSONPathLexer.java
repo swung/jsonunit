@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 JSONPath.g 2010-12-20 10:52:00
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 JSONPath.g 2010-12-22 22:35:41
 
 package org.jsonunit;
 
@@ -77,10 +77,10 @@ public class JSONPathLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // JSONPath.g:32:2: ( ( '0' .. '9' )+ )
-            // JSONPath.g:32:4: ( '0' .. '9' )+
+            // JSONPath.g:35:2: ( ( '0' .. '9' )+ )
+            // JSONPath.g:35:4: ( '0' .. '9' )+
             {
-            // JSONPath.g:32:4: ( '0' .. '9' )+
+            // JSONPath.g:35:4: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -94,7 +94,7 @@ public class JSONPathLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // JSONPath.g:32:5: '0' .. '9'
+            	    // JSONPath.g:35:5: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -124,8 +124,8 @@ public class JSONPathLexer extends Lexer {
     // $ANTLR start "UCHAR"
     public final void mUCHAR() throws RecognitionException {
         try {
-            // JSONPath.g:35:2: (~ ( '\"' | '\\\\' | '/' | '[' | ']' ) )
-            // JSONPath.g:35:4: ~ ( '\"' | '\\\\' | '/' | '[' | ']' )
+            // JSONPath.g:38:2: (~ ( '\"' | '\\\\' | '/' | '[' | ']' ) )
+            // JSONPath.g:38:4: ~ ( '\"' | '\\\\' | '/' | '[' | ']' )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='Z')||(input.LA(1)>='^' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -148,8 +148,8 @@ public class JSONPathLexer extends Lexer {
     // $ANTLR start "HEX"
     public final void mHEX() throws RecognitionException {
         try {
-            // JSONPath.g:38:2: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
-            // JSONPath.g:38:5: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
+            // JSONPath.g:41:2: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+            // JSONPath.g:41:5: ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -172,11 +172,11 @@ public class JSONPathLexer extends Lexer {
     // $ANTLR start "ESCAPE"
     public final void mESCAPE() throws RecognitionException {
         try {
-            // JSONPath.g:41:2: ( '\\\\' ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX ) )
-            // JSONPath.g:41:4: '\\\\' ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX )
+            // JSONPath.g:44:2: ( '\\\\' ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX ) )
+            // JSONPath.g:44:4: '\\\\' ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX )
             {
             match('\\'); 
-            // JSONPath.g:41:9: ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX )
+            // JSONPath.g:44:9: ( '\\\"' | '\\\\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | 'u' HEX HEX HEX HEX )
             int alt2=9;
             switch ( input.LA(1) ) {
             case '\"':
@@ -233,63 +233,63 @@ public class JSONPathLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // JSONPath.g:41:10: '\\\"'
+                    // JSONPath.g:44:10: '\\\"'
                     {
                     match('\"'); 
 
                     }
                     break;
                 case 2 :
-                    // JSONPath.g:41:17: '\\\\'
+                    // JSONPath.g:44:17: '\\\\'
                     {
                     match('\\'); 
 
                     }
                     break;
                 case 3 :
-                    // JSONPath.g:41:24: '/'
+                    // JSONPath.g:44:24: '/'
                     {
                     match('/'); 
 
                     }
                     break;
                 case 4 :
-                    // JSONPath.g:41:30: 'b'
+                    // JSONPath.g:44:30: 'b'
                     {
                     match('b'); 
 
                     }
                     break;
                 case 5 :
-                    // JSONPath.g:41:36: 'f'
+                    // JSONPath.g:44:36: 'f'
                     {
                     match('f'); 
 
                     }
                     break;
                 case 6 :
-                    // JSONPath.g:41:42: 'n'
+                    // JSONPath.g:44:42: 'n'
                     {
                     match('n'); 
 
                     }
                     break;
                 case 7 :
-                    // JSONPath.g:41:48: 'r'
+                    // JSONPath.g:44:48: 'r'
                     {
                     match('r'); 
 
                     }
                     break;
                 case 8 :
-                    // JSONPath.g:41:54: 't'
+                    // JSONPath.g:44:54: 't'
                     {
                     match('t'); 
 
                     }
                     break;
                 case 9 :
-                    // JSONPath.g:41:60: 'u' HEX HEX HEX HEX
+                    // JSONPath.g:44:60: 'u' HEX HEX HEX HEX
                     {
                     match('u'); 
                     mHEX(); 
@@ -316,10 +316,10 @@ public class JSONPathLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // JSONPath.g:44:2: ( ( UCHAR | ESCAPE )+ )
-            // JSONPath.g:44:4: ( UCHAR | ESCAPE )+
+            // JSONPath.g:47:2: ( ( UCHAR | ESCAPE )+ )
+            // JSONPath.g:47:4: ( UCHAR | ESCAPE )+
             {
-            // JSONPath.g:44:4: ( UCHAR | ESCAPE )+
+            // JSONPath.g:47:4: ( UCHAR | ESCAPE )+
             int cnt3=0;
             loop3:
             do {
@@ -336,14 +336,14 @@ public class JSONPathLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // JSONPath.g:44:5: UCHAR
+            	    // JSONPath.g:47:5: UCHAR
             	    {
             	    mUCHAR(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // JSONPath.g:44:11: ESCAPE
+            	    // JSONPath.g:47:11: ESCAPE
             	    {
             	    mESCAPE(); 
 
@@ -375,8 +375,8 @@ public class JSONPathLexer extends Lexer {
         try {
             int _type = SEP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // JSONPath.g:47:2: ( '/' )
-            // JSONPath.g:47:4: '/'
+            // JSONPath.g:50:2: ( '/' )
+            // JSONPath.g:50:4: '/'
             {
             match('/'); 
 
