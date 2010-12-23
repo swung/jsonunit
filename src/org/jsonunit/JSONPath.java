@@ -23,6 +23,12 @@ public class JSONPath
 {
 	public static Object getValueByPath(String json, String path)
 	{
+		if (json == null) {
+			return null;
+		} else {
+			json = json.trim();
+		}
+
 		try {
 			if (json.startsWith("{")) {
 				JSONObject o = new JSONObject(json);
@@ -151,7 +157,7 @@ public class JSONPath
 			buffer.append(line);
 			line = br.readLine();
 		}
-		Object res = getValueByPath(buffer.toString(), "/[1]/name");
+		Object res = getValueByPath(buffer.toString(), "/[0]/name");
 		System.out.println(res);
 
 		// if (res instanceof Integer) {
