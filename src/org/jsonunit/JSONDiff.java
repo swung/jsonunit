@@ -1,9 +1,5 @@
 package org.jsonunit;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -186,40 +182,6 @@ public class JSONDiff
 		paths[1] = getStackPath(stack2);
 
 		return paths;
-	}
-
-	public static void main(String[] args) throws IOException, JSONException
-	{
-		FileReader reader = new FileReader(new File("D:\\test.json"));
-		BufferedReader br = new BufferedReader(reader);
-		StringBuffer buffer = new StringBuffer();
-		String line = br.readLine();
-		while (line != null) {
-			buffer.append(line);
-			line = br.readLine();
-		}
-		JSONObject json = new JSONObject(buffer.toString());
-
-		FileReader reader1 = new FileReader(new File("D:\\test1.json"));
-		BufferedReader br1 = new BufferedReader(reader1);
-		StringBuffer buffer1 = new StringBuffer();
-		String line1 = br1.readLine();
-		while (line1 != null) {
-			buffer1.append(line1);
-			line1 = br1.readLine();
-		}
-		JSONObject json1 = new JSONObject(buffer1.toString());
-
-		JSONDiff diff = new JSONDiff(json, json1);
-		boolean d = diff.seam();
-		System.out.println(d);
-		if (!diff.seam()) {
-			String[] ps = diff.getDiffPath();
-			System.out.println(ps[0]);
-			System.out.println(ps[1]);
-			System.out.println(JSONPath.getValueByPath(json, ps[0]));
-			System.out.println(JSONPath.getValueByPath(json1, ps[1]));
-		}
 	}
 
 }

@@ -1,10 +1,6 @@
 package org.jsonunit;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.runtime.ANTLRInputStream;
@@ -114,7 +110,7 @@ public class JSONPath
 		return null;
 	}
 
-	private static String getPath(List<JSONPathToken> list)
+	public static String getPath(List<JSONPathToken> list)
 	{
 		StringBuffer buf = new StringBuffer();
 
@@ -129,7 +125,7 @@ public class JSONPath
 		return buf.toString();
 	}
 
-	private static List<JSONPathToken> getPathList(String path)
+	public static List<JSONPathToken> getPathList(String path)
 	{
 		if ((path == null) || path.length() == 0)
 			return null;
@@ -145,38 +141,6 @@ public class JSONPath
 		} catch (Exception e) {
 			return null;
 		}
-	}
-
-	public static void main(String[] args) throws Exception
-	{
-		FileReader reader = new FileReader(new File("D:\\testpdb.json"));
-		BufferedReader br = new BufferedReader(reader);
-		StringBuffer buffer = new StringBuffer();
-		String line = br.readLine();
-		while (line != null) {
-			buffer.append(line);
-			line = br.readLine();
-		}
-		Object res = getValueByPath(buffer.toString(), "/[0]/name");
-		System.out.println(res);
-
-		// if (res instanceof Integer) {
-		// System.out.println(((Integer) res).intValue());
-		// }
-
-		// Object res1 = getValueByPath(json, "/Image/IDs[2]");
-		// System.out.println(res1);
-		//
-		// Object res2 = getValueByPath(json, "/Image");
-		// System.out.println(res2);
-		// List<JSONPathToken> list = new ArrayList<JSONPathToken>();
-		// JSONPathToken t = new JSONPathToken("test1", 1);
-		// list.add(t);
-		// t = new JSONPathToken("test2", -1);
-		// list.add(t);
-		// t = new JSONPathToken("test3", 5);
-		// list.add(t);
-		// System.out.println(getPath(list));
 	}
 
 }
